@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d9e7f0;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #d9e5ee;
+}
+
+main {
+    height: calc(100vh - 80px - 40px);
+}
+
+.toggle--dark {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: 60px;
+    border-radius: 1100px;
+    border: 1px solid #6e6e6e;
+    background-image: url(./img/img1.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0px 8px;
+}
+
+.bolinha {
+    /* a bolinha não aparece se não trocar o display pra inline-block*/
+    display: inline-block;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    background-color: #FAC700;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(0%);
+    transition: all 0.4s;
+}
+
+#toggle--dark {
+    display: none;
+}
+
+main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Estilização do modo dark */
+
+.dark .bolinha {
+    /* Desfaz */
+    transform: translateX(calc(135px - 40px)) translateY(-50%);
+    background-color: #051f2e;
+}
+
+.dark .toggle--dark {
+    background-image: url(./img/img2.png);
+}
+
+.dark header,
+.dark footer {
+    background-color: #0f172a;
+    color: white;
+}
